@@ -22,7 +22,7 @@
   <body >
     <!-- nav bar start -->
     <div class ="nonFooter">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
       <a class="navbar-brand" href=<%= root_path%>>
         <img src=<%= image_path "brandlogo.png" %> width="50" height="50" alt="Blogger">
       </a>
@@ -39,16 +39,13 @@
           <li class="<%= 'active' if current_page?(pages_about_path) %> nav-item">
             <a class="nav-link" href=<%= pages_about_path%>>About</a>
           </li>
-          <li class="<%= 'active' if current_page?(pages_contactus_path) %> nav-item">
-            <a class="nav-link " href=<%= pages_contactus_path%>>Contact us</a>
-          </li>
           <li class="<%= 'active' if current_page?(pages_how_to_write_path) %> nav-item">
             <a class="nav-link " href=<%= pages_how_to_write_path%>>How To write blog</a>
           </li>
           <!-- login as Admin print Admin View -->
           <% if admin_signed_in? %>
             <li class="nav-item">
-              <marquee class="nav-link" style="color:white" >   Admin View    </marquee>
+              <marquee class="nav-link" style="color:white" >   Admin  </marquee>
             </li>
           <% end%>
         </ul>
@@ -57,15 +54,12 @@
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" >
+                <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" style="width:25%">
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #68243d;">
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog</a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
                   <i class="fas fa-plus"></i> Create blog</a>
-                <button onclick="exportTableToCSV('Blog.csv')" style="color: white;background-color:#68243d;border:none;font-weight:bold">
-                  <i class='fas fa-cloud-download-alt'></i> Download
-                </button>
                 <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_user_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
             </li>
@@ -73,22 +67,19 @@
             <!-- if logined as Admin dropdown list item -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" >
+                <img class="rounded-0" style="width:25%" src=<%= image_path "uinfo.png" %> alt="Third slide" >
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #68243d;">
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog </a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
                   <i class="fas fa-plus"></i> Create blog</a>
-                <button onclick="exportTableToCSV('Blog.csv')" style="color: white;background-color:#68243d;border:none;font-weight:bold">
-                  <i class='fas fa-cloud-download-alt'></i> Download
-                </button>
                 <%= link_to " <i class='fa fa-sign-out'></i>Logout".html_safe, destroy_admin_session_path, :method => :delete , class:"nav-link ", style: "color:white"  %>
               </div>
                </li>
           <% else %>
             <!-- if login session not set show login,Signup link -->
             <li class="nav-item active">
-              <a class="nav-link" href=<%= new_admin_session_path %>>Admin View</a>
+              <a class="nav-link" href=<%= new_admin_session_path %>>Admin</a>
             </li>
             <li class="nav-item"><a class="nav-link " href=<%= new_user_session_path %>>Login</a></li>
             <li class="nav-item">
@@ -107,22 +98,7 @@
     </nav>
     <!-- end of nav -->
     <!--  table to download blog -->
-    <table hidden="true">
-      <thead>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Discription</th>
-      </thead>
-      <tbody>
-        <% @blogs.each do |blog| %>
-          <tr>
-            <td><%=blog.id%></td>
-            <td><%=blog.Title.gsub(/[\s,]/ ," ")%></td>
-            <td><%= ActionView::Base.full_sanitizer.sanitize(blog.Discription).gsub(/[\s,]/ ," ")%></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+   
     <!-- notice for all like login success,login Unsuccess,blog Created, Blog Updated or deleted -->
     <% if notice %>
       <div class="alert alert-info alert-dismissible">
@@ -147,7 +123,7 @@
   <div   class="footer">
   <!-- Navbar content -->
   <center>
-      <label style=" color:white;"> @Developed By Aniruddha Mirajkar</label>
+      <label style=" color:blue;"> Developed By チーム5　IT日本語 </label>
   </center>
 </div>
 </body>

@@ -17,7 +17,7 @@
   <% end %>
   <% @blogs.where(email: current_user.email).each do |blog| %>
   <div class="container py-3" >
-    <div class="card" style="background-color:pink">
+    <div class="card" style="background-color:white">
       <div class="row ">
         <div class="col-md-4">
           <center> <img class="w-100" src=<%= blog.image %> alt="Third slide" style="max-height: 300px;max-width: 400px">
@@ -31,8 +31,8 @@
             <p class="card-text"> <%= ActionView::Base.full_sanitizer.sanitize(blog.Discription).truncate_words(100)%>
             </p>
             <p class="card-text"></p>
-            <a href=<%= blog_path(blog)  %>>
-              <button class='badge badge-pill badge-info' style="font-size: 15px">Read More</button></a>
+           <center> <a href=<%= blog_path(blog)  %>>
+              </center><button class='badge badge-pill badge-info' style="font-size: 15px; background-color:red">Read More</button></a></center>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
   <% end %>
   <% @blogs.where(email: current_admin.email).each do |blog| %>
   <div class="container py-3" >
-    <div class="card" style="background-color:pink">
+    <div class="card" style="background-color:white">
       <div class="row ">
         <div class="col-md-4">
           <center> <img class="w-100" src=<%= blog.image %> alt="Third slide" style="max-height: 300px;max-width: 400px">
@@ -69,7 +69,7 @@
             <p class="card-text"> <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(100)%>
             </p>
             <p class="card-text"></p>
-            <center> <a href=<%= blog_path(blog) %>><button class='badge badge-pill badge-info' style="font-size: 15px">Read More</button></a>
+            <center> <a href=<%= blog_path(blog) %>><button class='badge badge-pill badge-info' style="font-size: 15px;background-color:red">Read More</button></a>
               <%= link_to 'Edit', edit_blog_path(blog), class:"btn btn-primary" %>
               <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
               <br>
