@@ -42,6 +42,9 @@
           <li class="<%= 'active' if current_page?(pages_how_to_write_path) %> nav-item">
             <a class="nav-link " href=<%= pages_how_to_write_path%>>How To write blog</a>
           </li>
+          <li class="<%= 'active' if current_page?(user_index_path) %> nav-item">
+            <a class="nav-link " href=<%= user_index_path%>>Members</a>
+          </li>
           <!-- login as Admin print Admin View -->
           <% if admin_signed_in? %>
             <li class="nav-item">

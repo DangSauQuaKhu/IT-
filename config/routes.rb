@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'user/show'
+
   get 'home/index'
 
   devise_for :admins
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
   get 'pages/about'
   
   get 'pages/show_detailed_blog'
+  get 'user/index'
+  
 
 
   
