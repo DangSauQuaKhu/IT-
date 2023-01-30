@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'home/index'
+
   devise_for :admins
   get 'pages/how_to_write'
 
@@ -9,8 +11,9 @@ Rails.application.routes.draw do
   resources :blogs
   
   get 'pages/signup'
-
-  root 'pages#home'
+  root 'home#index'
+  
+  get 'pages/home'
 
   get 'pages/contactus'
 
