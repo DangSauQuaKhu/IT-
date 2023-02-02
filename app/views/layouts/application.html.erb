@@ -60,7 +60,7 @@
                 <img class="rounded-0" src=<%= image_path "uinfo.png" %> alt="Third slide" style="width:25%">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: black;">
-                  <a class="nav-link" style="color: white" href=<%= user_show_path%>><i class='fab fa-blogger-b'></i> My Profile</a>
+                  <a class="nav-link" style="color: white" href=<%= user_show_url(current_user.id)%>><i class='fab fa-blogger-b'></i> My Profile</a>
                 <a class="nav-link" style="color: white" href=<%= pages_Myblogs_path%>><i class='fab fa-blogger-b'></i> My Blog</a>
                 <a    class="nav-link" style="text-decoration:none;color:white" href=<%= new_blog_path%>>
                   <i class="fas fa-plus"></i> Create blog</a>

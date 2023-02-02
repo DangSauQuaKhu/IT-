@@ -3,7 +3,7 @@ class UserController < ApplicationController
       @users = User.all
   end
   def show
-     @users = current_user
+     @users = User.find(params[:format])
   end
   def user_params
       params.require(:user).permit(:email, :password, :name,:avatar,:password_confirmation, :age)

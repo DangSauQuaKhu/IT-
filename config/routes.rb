@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :blogs
+  resources :users
   
   get 'pages/signup'
   root 'home#index'
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   
   get 'pages/show_detailed_blog'
   get 'user/index'
-  get 'user/show'
+  
   
 
 
