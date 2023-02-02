@@ -91,7 +91,7 @@
           <% end %>
         </ul>
         <!-- search blog from it's title -->
-        <%= form_tag root_path+"#Blogs",class:"form-inline my-2 my-lg-0", :method => 'get' do %>
+        <%= form_tag pages_home_path+"#Blogs",class:"form-inline my-2 my-lg-0", :method => 'get' do %>
           <%= text_field_tag :search, params[:search], class:"form-control mr-sm-2", placeholder:"Search", :required => true %>
           <%= button_tag(type: "submit", class: "btn btn-outline-success", :name => nil) do %>
             <i class="fas fa-search"></i>
