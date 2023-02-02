@@ -1,2 +1,16 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+  
+ <h2 style="font-family: billabong">プロフィール</h2>
+
+<p>
+
+            <div class="card" style="max-width: 350px">
+               <img class="card-img-top" src=<%= current_user.avatar %> alt="Card image cap" height="250px">
+               </div>
+ 
+</p>
+<h3>名前: </h3>
+<%=current_user.name %>
+<h3>年齢 :</h3>
+<%=current_user.age %>
+<h3>メールアドレス: </h3>
+<%=current_user.email %> 

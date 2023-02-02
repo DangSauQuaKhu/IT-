@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   
   get 'pages/show_detailed_blog'
   get 'user/index'
+  get 'user/show'
   
 
 
