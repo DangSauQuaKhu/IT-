@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'admin/show'
+
   get 'user/show'
 
   get 'home/index'

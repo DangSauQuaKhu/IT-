@@ -1,0 +1,85 @@
+
+  <body>
+    <section
+      class="h-100"
+      style="
+        background: linear-gradient(
+          to right,
+          rgba(251, 194, 235, 1),
+          rgba(166, 193, 238, 1)
+        );
+      "
+    >
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-9 col-xl-12">
+            <div class="card">
+              <div
+                class="rounded-top text-white d-flex flex-row"
+                style="background-color: #000; height: 200px"
+              >
+                <div
+                  class="ms-4 mt-5 ml-4 d-flex flex-column"
+                  style="width: 150px"
+                >
+                  <img
+                    src=<%= @admins.avatar %>
+                    alt="user image"
+                    class="img-fluid img-thumbnail mt-4 mb-2"
+                    style="width: 150px; z-index: 1"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    data-mdb-ripple-color="dark"
+                    style="z-index: 1;margin-top: 20px"
+                    
+                  >
+                   プロフィール
+                  </button>
+                </div>
+                <div class="ms-3" style="margin-top: 70px; margin-left: 20px">
+                  <h5>Admin's profile</h5>
+                  <h5><%= @admins.name %></h5>
+                  <p>年齢: <%= @admins.age %></p>
+                  <p>メールアドレス: <%= @admins.email %> </p>
+                </div>
+              </div>
+              <div class="p-4 text-black" style="background-color: #f8f9fa">
+        
+              
+              </div>
+              <div class="card-body p-4 text-black">
+                <div class="mb-5">
+                  <p class="lead fw-normal mb-1"></p>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <p class="lead fw-normal mb-0">ブログズ</p>
+                  <p class="mb-0">
+                    <a href="#!" class="text-muted"></a>
+                  </p>
+                </div>
+                <div class="row">
+                     <% @blogs.each do |blog| %>
+                  <div class="col-md-6" style="margin-top: 20px"　>
+                    <img
+                      src=<%= blog.image %>
+                      alt="image 1"
+                      class="w-100 rounded-3"　 height="350px"
+                    />
+                     <%= link_to "<span class='badge badge-pill badge-info'style='background-color:red'>Read More</span>".html_safe,  blog %> <br>
+                  </div>
+                  
+                   <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <%= will_paginate @blogs, list_classes: %w(pagination justify-content-center), previous_label: "Latest", next_label: "older" %>
+    </section>
+  </body>
+
