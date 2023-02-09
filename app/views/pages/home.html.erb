@@ -47,7 +47,7 @@
               <p class="card-text"> <%= ActionView::Base.full_sanitizer.sanitize( blog.Discription).truncate_words(30)%></p>
             </div>
             <div class="card-footer">
-              <%= link_to "<span class='badge badge-pill badge-info'>Read More</span>".html_safe,  blog %> <br>
+              <%= link_to "<span class='badge badge-pill badge-info' style='background-color:red'>Read More</span>".html_safe,  blog %> <br>
               <small class="text-muted">Uploaded by <%= blog.email %><br>
                 Last updated <%= blog.updated_at.strftime("%d-%m-%Y") %>
               </small>
